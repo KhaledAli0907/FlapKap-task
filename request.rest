@@ -13,7 +13,7 @@ POST http://localhost:5500/users
 Content-Type: application/json
 
 {
-    "username": "khaledB",
+    "username": "sofian",
     "password": "1234",
     "role": "seller"
 }
@@ -86,8 +86,8 @@ Content-Type: application/json
 
 ###
 # Delete product
-DELETE http://localhost:5500/products/65c65ac318bc202cf574f37f
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGZkYWQxM2YwM2ZiYjZjNWQxNDAiLCJ1c2VybmFtZSI6ImtoYWxlZFNlbGxlciIsInBhc3N3b3JkIjoiJDJiJDEwJGJmUmduVUd1ZHFBUGNJZWh4cE5NWHUuanhoQUNHUnhCOGFScVhIVWdrWVdCSU95Sk9QdlNTIiwiZGVwb3NpdCI6MCwicm9sZSI6InNlbGxlciIsIl9fdiI6MCwiaWF0IjoxNzA3NDk4MzM0fQ.RBkS59UE7MNbk9Ro9h2_pzdH7BZh5cp8gWKdbRVryC4
+DELETE http://localhost:5500/products/65c756e12a6a3947d224e2fd
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGZkYWQxM2YwM2ZiYjZjNWQxNDAiLCJ1c2VybmFtZSI6ImtoYWxlZFNlbGxlciIsInBhc3N3b3JkIjoiJDJiJDEwJGJmUmduVUd1ZHFBUGNJZWh4cE5NWHUuanhoQUNHUnhCOGFScVhIVWdrWVdCSU95Sk9QdlNTIiwiZGVwb3NpdCI6MCwicm9sZSI6InNlbGxlciIsIl9fdiI6MCwiaWF0IjoxNzA3NDk2MTEyfQ.Wo-mvHSDtkMGUnUaCFtLV2Gim92DUgQTlV6Tgn-Hew8
 
 ###
 #buy

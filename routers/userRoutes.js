@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
     if (!userCreated)
       return res.status(403).json({ message: "Can't create user" });
 
-    res.status(201).json({ message: "User created successfully" });
+    res.status(201).json({ message: "User created successfully", userCreated });
   } catch (err) {
     if (err.code === 11000) {
       // Duplicate username error
