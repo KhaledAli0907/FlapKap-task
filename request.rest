@@ -1,0 +1,105 @@
+// users
+# get All users
+GET http://localhost:5500/users/all
+
+###
+# get specific user
+GET http://localhost:5500/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NTA0NTk2fQ.y-_ECFPU1vSfXkjGCo7A5i_eyrW8KL2hCyH9jj6PnnE
+
+###
+# create user
+POST http://localhost:5500/users
+Content-Type: application/json
+
+{
+    "username": "khaledB",
+    "password": "1234",
+    "role": "seller"
+}
+
+###
+# login user
+POST http://localhost:5500/login
+Content-Type: application/json
+
+{
+    "username": "khaled5",
+    "password": "1234"
+} 
+
+###
+# update user
+PATCH http://localhost:5500/users/65c607f103680295909db02b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2MDdmMTAzNjgwMjk1OTA5ZGIwMmIiLCJ1c2VybmFtZSI6ImtoYWxlZDMiLCJwYXNzd29yZCI6IiQyYiQxMCQueDFXWC4wQUdqdS9MWTk0UjZ5bjkuMkZqeVZZMEFvRnRDV2Rxd2VVSXdnZ0FaRmFxeXRRRyIsImRlcG9zaXQiOjAsInJvbGUiOiJzZWxsZXIiLCJfX3YiOjAsImlhdCI6MTcwNzQ4ODUzNH0.ac7w9d88ZFhGOGUqO1-lmLr8cIyBxWKfaIIeGSESIfo
+Content-Type: application/json
+
+{
+    "username": "khaled31"
+} 
+
+###
+# deposit in this user's account
+POST http://localhost:5500/deposit
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NTA0NTk2fQ.y-_ECFPU1vSfXkjGCo7A5i_eyrW8KL2hCyH9jj6PnnE
+Content-Type: application/json
+
+{
+    "coins" : [50, 100, 20]
+}
+
+###
+# reset user's deposted coins
+POST http://localhost:5500/reset/65c606ec03680295909db028
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2MDZlYzAzNjgwMjk1OTA5ZGIwMjgiLCJ1c2VybmFtZSI6ImtoYWxlZDEiLCJwYXNzd29yZCI6IiQyYiQxMCRraTBlQXlEVExHVjF4bWhxL0tlWW11WEVValVhTWswYzYuR0xuSVVLMkJZTTNFYm8yeEEvdSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NDg5MTg4fQ.aJ7VFH32Ioh5A9Goh-otwgCTJ3J04O4ZRkzsO29Qjl8
+
+
+
+###
+// products
+# get all products
+GET http://localhost:5500/products
+
+###
+# Create a new product
+POST http://localhost:5500/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGZkYWQxM2YwM2ZiYjZjNWQxNDAiLCJ1c2VybmFtZSI6ImtoYWxlZFNlbGxlciIsInBhc3N3b3JkIjoiJDJiJDEwJGJmUmduVUd1ZHFBUGNJZWh4cE5NWHUuanhoQUNHUnhCOGFScVhIVWdrWVdCSU95Sk9QdlNTIiwiZGVwb3NpdCI6MCwicm9sZSI6InNlbGxlciIsIl9fdiI6MCwiaWF0IjoxNzA3NDk2MTEyfQ.Wo-mvHSDtkMGUnUaCFtLV2Gim92DUgQTlV6Tgn-Hew8
+Content-Type: application/json
+
+{
+    "productName": "plate",
+    "stock": 50,
+    "cost": 20
+}
+
+###
+# update existing product
+PATCH http://localhost:5500/products/65c699b530b8e3cb0c6cb3bc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGZkYWQxM2YwM2ZiYjZjNWQxNDAiLCJ1c2VybmFtZSI6ImtoYWxlZFNlbGxlciIsInBhc3N3b3JkIjoiJDJiJDEwJGJmUmduVUd1ZHFBUGNJZWh4cE5NWHUuanhoQUNHUnhCOGFScVhIVWdrWVdCSU95Sk9QdlNTIiwiZGVwb3NpdCI6MCwicm9sZSI6InNlbGxlciIsIl9fdiI6MCwiaWF0IjoxNzA3NTE0MjM3fQ.OLAEplLS8wJGFZ_5qbgW006BXxM3ep8vOHR7uNhBXow
+Content-Type: application/json
+
+{
+    "productName": "table",
+    "cost": 10,
+    "stock": 100
+}
+
+###
+# Delete product
+DELETE http://localhost:5500/products/65c65ac318bc202cf574f37f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGZkYWQxM2YwM2ZiYjZjNWQxNDAiLCJ1c2VybmFtZSI6ImtoYWxlZFNlbGxlciIsInBhc3N3b3JkIjoiJDJiJDEwJGJmUmduVUd1ZHFBUGNJZWh4cE5NWHUuanhoQUNHUnhCOGFScVhIVWdrWVdCSU95Sk9QdlNTIiwiZGVwb3NpdCI6MCwicm9sZSI6InNlbGxlciIsIl9fdiI6MCwiaWF0IjoxNzA3NDk4MzM0fQ.RBkS59UE7MNbk9Ro9h2_pzdH7BZh5cp8gWKdbRVryC4
+
+###
+#buy
+POST http://localhost:5500/buy
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjE2MCwicm9sZSI6ImJ1eWVyIiwiX192IjowLCJpYXQiOjE3MDc1MTQ3Mzh9._JSkCntUCe13g3wmvyMBJk8b49qklItWUXZH2tpk-RQ
+Content-Type: application/json
+
+{
+    "productId": "65c699b530b8e3cb0c6cb3bc",
+    "amount": 1
+}
+
+###
+# get purchase history
+GET http://localhost:5500/buy

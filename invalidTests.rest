@@ -1,0 +1,143 @@
+#wrong enum value in role
+POST http://localhost:5500/users
+Content-Type: application/json
+
+{
+    "username": "wrong",
+    "password": "1234",
+    "role": "admin"
+}
+
+
+###
+#update user while logging in with another user
+PATCH http://localhost:5500/users/65c50de16cb2bc826e4b4aaa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjgwLCJyb2xlIjoiYnV5ZXIiLCJfX3YiOjAsImlhdCI6MTcwNzU1NTE0MX0.88rWIks9x0kjPDm3SXkCJElC-5ojnIuC_qLeUvfHs0E
+Content-Type: application/json
+
+{
+    "username": "khaled31"
+} 
+
+
+###
+# send negative or string
+POST http://localhost:5500/deposit
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NTA0NTk2fQ.y-_ECFPU1vSfXkjGCo7A5i_eyrW8KL2hCyH9jj6PnnE
+Content-Type: application/json
+
+{
+    "coins" : [5, "5", -1]
+}
+
+###
+# send strign not array
+POST http://localhost:5500/deposit
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NTA0NTk2fQ.y-_ECFPU1vSfXkjGCo7A5i_eyrW8KL2hCyH9jj6PnnE
+Content-Type: application/json
+
+{
+    "coins" : "5"
+}
+
+###
+# send invalid number
+POST http://localhost:5500/deposit
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NTA0NTk2fQ.y-_ECFPU1vSfXkjGCo7A5i_eyrW8KL2hCyH9jj6PnnE
+Content-Type: application/json
+
+{
+    "coins" : [1, 5, 20]
+}
+
+###
+# reset user's deposted coins with wrong token
+POST http://localhost:5500/reset/65c606ec03680295909db028
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2MDdmMTAzNjgwMjk1OTA5ZGIwMmIiLCJ1c2VybmFtZSI6ImtoYWxlZDMxIiwicGFzc3dvcmQiOiIkMmIkMTAkLngxV1guMEFHanUvTFk5NFI2eW45LjJGanlWWTBBb0Z0Q1dkcXdlVUl3Z2dBWkZhcXl0UUciLCJkZXBvc2l0IjowLCJyb2xlIjoic2VsbGVyIiwiX192IjowLCJpYXQiOjE3MDc1NTg5MTB9.Q4fRSFLxianq6niUTEPa3bkazh4wZnAo-wDM8Cv4qnE
+
+###
+# create user already exists
+POST http://localhost:5500/users
+Content-Type: application/json
+
+{
+    "username": "khaledB",
+    "password": "1234",
+    "role": "seller"
+}
+
+
+# products
+###
+# Create a new product with buyer account
+POST http://localhost:5500/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGYwN2EzMWQxMWY1ODEyYzVjZmQiLCJ1c2VybmFtZSI6ImtoYWxlZDUiLCJwYXNzd29yZCI6IiQyYiQxMCRFbjJZREhtWUM0T25TL1g4em5TOFBlRzRGRWN5Z2Q4RUM3cmFHMHZ4TjFzRy9JczE2QVdSeSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NTU5MTMxfQ.a2K914sr3RO4MoIfG7Ck6-x7bcwCl57gKGFcX36xMY4
+Content-Type: application/json
+
+{
+    "productName": "plate",
+    "stock": 50,
+    "cost": 20
+}
+
+###
+# update existing product with wrong seller
+PATCH http://localhost:5500/products/65c699b530b8e3cb0c6cb3bc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2MDdmMTAzNjgwMjk1OTA5ZGIwMmIiLCJ1c2VybmFtZSI6ImtoYWxlZDMxIiwicGFzc3dvcmQiOiIkMmIkMTAkLngxV1guMEFHanUvTFk5NFI2eW45LjJGanlWWTBBb0Z0Q1dkcXdlVUl3Z2dBWkZhcXl0UUciLCJkZXBvc2l0IjowLCJyb2xlIjoic2VsbGVyIiwiX192IjowLCJpYXQiOjE3MDc1NTg5MTB9.Q4fRSFLxianq6niUTEPa3bkazh4wZnAo-wDM8Cv4qnE
+Content-Type: application/json
+
+{
+    "productName": "table",
+    "cost": 10,
+    "stock": 100
+}
+
+###
+# Delete product with wrong seller
+DELETE http://localhost:5500/products/65c50de16cb2bc826e4b4aaa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGZkYWQxM2YwM2ZiYjZjNWQxNDAiLCJ1c2VybmFtZSI6ImtoYWxlZFNlbGxlciIsInBhc3N3b3JkIjoiJDJiJDEwJGJmUmduVUd1ZHFBUGNJZWh4cE5NWHUuanhoQUNHUnhCOGFScVhIVWdrWVdCSU95Sk9QdlNTIiwiZGVwb3NpdCI6MCwicm9sZSI6InNlbGxlciIsIl9fdiI6MCwiaWF0IjoxNzA3NDk4MzM0fQ.RBkS59UE7MNbk9Ro9h2_pzdH7BZh5cp8gWKdbRVryC4
+
+###
+#buy with invalid amount
+POST http://localhost:5500/buy
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjE2MCwicm9sZSI6ImJ1eWVyIiwiX192IjowLCJpYXQiOjE3MDc1MTQ3Mzh9._JSkCntUCe13g3wmvyMBJk8b49qklItWUXZH2tpk-RQ
+Content-Type: application/json
+
+{
+    "productId": "65c699b530b8e3cb0c6cb3bc",
+    "amount": "11"
+}
+
+###
+#buy with invalid product id
+POST http://localhost:5500/buy
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjE2MCwicm9sZSI6ImJ1eWVyIiwiX192IjowLCJpYXQiOjE3MDc1MTQ3Mzh9._JSkCntUCe13g3wmvyMBJk8b49qklItWUXZH2tpk-RQ
+Content-Type: application/json
+
+{
+    "productId": "65c699b530b8e3cb0c6cb3b",
+    "amount": 1
+}
+
+###
+#buy with amount bigger than stock
+POST http://localhost:5500/buy
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NTAwMGQxM2YwM2ZiYjZjNWQxNDMiLCJ1c2VybmFtZSI6ImtoYWxlZEIiLCJwYXNzd29yZCI6IiQyYiQxMCRqVk1hcGo5dXFUZmlEVmJNc2hQUnQuSC8zNUU4QjlNVTQuV2ZDYmE5WC5wTGtIT3haYTguaSIsImRlcG9zaXQiOjE2MCwicm9sZSI6ImJ1eWVyIiwiX192IjowLCJpYXQiOjE3MDc1MTQ3Mzh9._JSkCntUCe13g3wmvyMBJk8b49qklItWUXZH2tpk-RQ
+Content-Type: application/json
+
+{
+    "productId": "65c699b530b8e3cb0c6cb3bc",
+    "amount": 1000
+}
+
+
+###
+#buy with user that doesn't have enough balance
+POST http://localhost:5500/buy
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NGYwN2EzMWQxMWY1ODEyYzVjZmQiLCJ1c2VybmFtZSI6ImtoYWxlZDUiLCJwYXNzd29yZCI6IiQyYiQxMCRFbjJZREhtWUM0T25TL1g4em5TOFBlRzRGRWN5Z2Q4RUM3cmFHMHZ4TjFzRy9JczE2QVdSeSIsImRlcG9zaXQiOjAsInJvbGUiOiJidXllciIsIl9fdiI6MCwiaWF0IjoxNzA3NTU5MTMxfQ.a2K914sr3RO4MoIfG7Ck6-x7bcwCl57gKGFcX36xMY4
+Content-Type: application/json
+
+{
+    "productId": "65c699b530b8e3cb0c6cb3bc",
+    "amount": 1
+}
