@@ -12,4 +12,4 @@ How to run it:
 4- there is two .rest files, request.rest this is the valid api calls to test the API,
 InvalidTests.rest is a file that contains an invalid tests to test the error messages and status codes.
 Simply open the file and click on 'Send request' it going to send request to the server and display the response
-![Alt text](./src/reqDemo.mp4)
+![Alt text](./src/reqDemo.gif)
