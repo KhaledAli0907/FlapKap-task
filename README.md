@@ -4,9 +4,9 @@ Used Framework: nodejs
 prerequisites: nodejs, rest vscode extension
 
 How to run it:
-1- After cloning run npm install to install the required packages
-2- install rest vscode extension
-3- execute 'npm run start' in terminal to run the server
+1- After cloning run npm install to install the required packages__
+2- install rest vscode extension__
+3- execute 'npm run start' in terminal to run the server__
 ![Alt text](./src/start.png)
 
 4- there is two .rest files, request.rest this is the valid api calls to test the API,
