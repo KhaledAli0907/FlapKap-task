@@ -35,7 +35,7 @@ router.post("/", authToken, async (req, res) => {
 });
 
 // update product
-router.patch("/:productId", authToken, async (req, res) => {
+router.patch("/:productId", authToken, async (req, res,next) => {
   const userId = req.user._id;
   const productId = req.params.productId;
 
@@ -71,7 +71,7 @@ router.patch("/:productId", authToken, async (req, res) => {
     });
 });
 
-router.delete("/:productId", authToken, async (req, res) => {
+router.delete("/:productId", authToken, async (req, res,next) => {
   const userId = req.user._id;
   const productId = req.params.productId;
 

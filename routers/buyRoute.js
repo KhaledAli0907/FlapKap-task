@@ -16,10 +16,11 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", authToken, async (req, res) => {
-  // get varables
+  // get varables;
   const user = req.user;
   const userId = user._id;
   const { productId, amount } = req.body;
+  let totalCost;
   try {
     if (!productId || !amount || typeof amount !== "number" || amount < 0)
       throw new Error(

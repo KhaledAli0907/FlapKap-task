@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const jwt = require("jsonwebtoken");
 
 // middle ware to authorize token and return user
